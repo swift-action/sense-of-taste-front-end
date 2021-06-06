@@ -5,3 +5,8 @@ a{
 a:hover{
   color:darkgrey;
 }
+.navBar{
+  display: inline-block;
+padding: 15px;
+
+}
