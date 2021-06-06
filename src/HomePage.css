@@ -1,7 +1,68 @@
 .jumbotron{
   margin-bottom: 0;
 }
-body{
-  background-image:url(https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1568&q=80) ;
+*{box-sizing: border-box;}
+
+
+
+.hero{
+  /* background: url(https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1568&q=80)center center/cover no-repeat; */
   
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-top: 0px;
+  padding-top: 0px;
+  height: 120vh; 
+  width: 100vw;
+  background-position: center;  
+  flex: 1;
+  /* width: 100%;  */
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+/* align-items: center; */
+box-shadow:inset 0 0 0 1000px rgba(0,0,0,0.2);
+object-fit:contain;
+  
+} 
+
+.pic{
+  width: 100%;
+}
+.d-block-w-100{
+  width: 100%;
+  height: 100%;
+  display: auto;
+}
+
+.caption{
+  height: 500px;
+}
+.button{
+  opacity: .5;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.button:hover{
+  background-color: red;
+}
+.paragraph{
+  float: left;
+  width: 40%;
+  text-align: justify;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bolder;
+  line-height: 1.7rem;
+}
+.image-button{
+  float: right;
+  height: 340px;
+  width: 40%;
+}
+.div-button{
+  height:400px;
+  margin: 70px ;
 }
