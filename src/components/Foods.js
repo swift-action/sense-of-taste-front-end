@@ -28,9 +28,7 @@ export class Foods extends Component {
         this.setState({
             food: food.data,
             displayFoodsCard: true,
-
         })
-
     }
 
     handleShow = () => {
@@ -40,49 +38,44 @@ export class Foods extends Component {
     }
 
     handleClose = () => {
-
         this.setState({
-
             displayModal:false
         })
-
     }
-
     setMealName = (e) => {
         this.setState({
             mealName: e.target.value 
-
         })
-
-        console.log(this.state.mealName);
-
     }
 
     setMaxCalories = (e) =>{
-
         this.setState({
             maxCalories:e.target.value
         })
-        console.log(this.state.maxCalories);
     }
 
     foodSearch = async (e) => {
         e.preventDefault();
-
         let searchEvent = {mealName: this.state.mealName, maxCalories:this.state.maxCalories};
-
         let foodArr = await axios.get(`${this.state.server}/foodSearch`, {params: searchEvent});
-
         this.setState({
-
             food:foodArr.data
         })
-
         console.log(this.state.food);
-
-
     }
-
+    
+    addToFav= async (idx)=>{
+        const obj = {
+            email:this.props.auth0.user.email,
+            name: this.state.food[idx].name,
+            image:this.state.food[idx].image,
+            ingredientLines:this.state.food[idx].ingredientLines,
+            calories:this.state.food[idx].calories,
+            totalTime:this.state.food[idx].totalTime
+        }
+        const favArr = await axios.post(`${this.state.server}/favFoods`,obj)
+       
+    }
 
 
 
@@ -119,7 +112,7 @@ export class Foods extends Component {
                                             <p>Total Time</p>
                                             <p>{item.totalTime}</p>
                                         </Card.Text>
-                                        <Button onClick={() => this.addFoodHandler(index)} variant="primary">Add to favourite</Button>
+                                        <Button onClick={() => this.addToFav(index)} variant="primary">Add to favourite</Button>
                                         <Button onClick={() => this.handledeleteShow(index)} variant="primary">Delete </Button>
                                     </Card.Body>
                                 </Card>
