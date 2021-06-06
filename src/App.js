@@ -8,22 +8,50 @@ import {
   Route
 } from "react-router-dom";
 
+import { withAuth0 } from '@auth0/auth0-react';
+import HomePage from './HomePage';
+import Login from './login';
+// import Profile from './components/Profile';
+// import Foods from './components/Foods';
+import Fitness from './components/Fitness';
+import AboutUs from './components/AboutUs';
+
+
+
+
+
 class App extends React.Component {
 
   render() {
-    console.log('app', this.props)
-    return(
+    return (
       <>
         <Router>
           <IsLoadingAndError>
-            <Header />
-              <Switch>
-                <Route exact path="/">
-                  {/* TODO: if the user is logged in, render the `MyFavoriteBooks` component, if they are not, render the `Login` component */}
-                </Route>
-                {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
-              </Switch>
-            <Footer />
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              {this.props.auth0.isAuthenticated ? < HomePage /> : <Login />}
+       
+
+            </Route>
+            {this.props.auth0.isAuthenticated && <>
+              <Route exact path="/Profile">
+                {/* <Profile /> */}
+              </Route>
+              <Route exact path="/Foods">
+                {/* <Foods /> */}
+              </Route>
+              <Route exact path="/Fitness">
+                <Fitness />
+              </Route>
+              <Route exact path="/AboutUs">
+                <AboutUs />
+              </Route>
+        </>}
+
+          </Switch>
+          <Footer />
+
           </IsLoadingAndError>
         </Router>
       </>
@@ -31,4 +59,5 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withAuth0(App);
+
