@@ -3,7 +3,8 @@ import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-import 'food.css';
+import Card from 'react-bootstrap/Card';
+import './food.css';
 
 export class Foods extends Component {
     constructor(props){
@@ -26,7 +27,7 @@ export class Foods extends Component {
     render() {
         return (
             <>
-            <div className={heroImage}><Button variant="outline-danger">SEARCH</Button></div>
+            <div className='heroImage'><Button variant="outline-danger">SEARCH</Button></div>
             
             {this.state.displayFoodsCard &&
             this.state.food.map((item,index)=>{
