@@ -5,13 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './food.css';
+import { CardColumns } from 'react-bootstrap';
 
 export class Foods extends Component {
     constructor(props){
         super(props);
         this.state={
             food:[],
-            server:process.env.REACT_SERVER,
+            server:process.env.REACT_APP_SERVER,
             displayFoodsCard:false,
 
         }
@@ -19,19 +20,23 @@ export class Foods extends Component {
     }
     componentDidMount = async () => {
         const food = await axios.get(`${this.state.server}/foods`,{ params: { email: this.props.auth0.user.email } })
+        console.log(food);
         this.setState({
             food:food.data,
             displayFoodsCard:true,
         })
+        
     }
     render() {
         return (
             <>
             <div className='heroImage'><Button variant="outline-danger">SEARCH</Button></div>
-            
+             <CardColumns>
             {this.state.displayFoodsCard &&
+           
             this.state.food.map((item,index)=>{
                 return(
+
                     <Card style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={item.image} />
                     <Card.Body>
@@ -51,7 +56,7 @@ export class Foods extends Component {
                 )
             })
             }
-                
+                </CardColumns>
             </>
         )
     }
