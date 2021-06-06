@@ -13,7 +13,7 @@ import LogoutButton from './components/LogoutButton';
 class Header extends React.Component {
   render() {
     return(
-      <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navBarbig" >
         <Navbar.Brand>My Favorite Books</Navbar.Brand>
          
           <Link className='navBar' to="/">Home</Link>

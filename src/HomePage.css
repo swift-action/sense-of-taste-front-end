@@ -1,7 +1,39 @@
-.jumbotron{
+/* .jumbotron{
   margin-bottom: 0;
+} */
+
+
+.hero{
+  /* background-image:url(https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1568&q=80) ; */
+
+background: url(https://images.unsplash.com/photo-1439127989242-c3749a012eac?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80) center center/ cover no-repeat; 
+/* margin-bottom: 20px;
+padding-bottom: 10px;
+padding-top: 20px;
+height: 70%; */
+
+height: 100vh;
+width: 100%;
+display:flex;
+flex-direction: column;
+ justify-content: center;
+
+box-shadow:inset 0 0 0 1000px rgba(0,0,0,0.2);
+object-fit:contain;
+z-index: 1;
+/* margin: 0;
+background-size: cover;
+background-repeat: no-repeat; */
+/* position: absolute; */
+/* background-position: center;  */ 
 }
-body{
-  background-image:url(https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1568&q=80) ;
-  
+
+.hero h1{
+ height: 500px;
+ margin-left: 20px;
+}
+
+.navbarsh{
+  height: 600px;
+  margin-left: 20px;
 }
