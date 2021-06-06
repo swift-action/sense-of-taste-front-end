@@ -7,6 +7,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+
 import { withAuth0 } from '@auth0/auth0-react';
 import HomePage from './HomePage';
 import Login from './login';
@@ -14,6 +15,7 @@ import Login from './login';
 // import Foods from './components/Foods';
 import Fitness from './components/Fitness';
 import AboutUs from './components/AboutUs';
+
 
 
 
@@ -49,6 +51,7 @@ class App extends React.Component {
 
           </Switch>
           <Footer />
+
           </IsLoadingAndError>
         </Router>
       </>
@@ -57,3 +60,4 @@ class App extends React.Component {
 }
 
 export default withAuth0(App);
+
