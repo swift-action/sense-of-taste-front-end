@@ -12,7 +12,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 import HomePage from './HomePage';
 import Login from './login';
 // import Profile from './components/Profile';
-// import Foods from './components/Foods';
+import Foods from './components/Foods';
 import Fitness from './components/Fitness';
 import AboutUs from './components/AboutUs';
 
@@ -26,7 +26,7 @@ class App extends React.Component {
     return (
       <>
         <Router>
-          <IsLoadingAndError>
+          {/* <IsLoadingAndError> */}
           <Header />
           <Switch>
             <Route exact path="/">
@@ -39,7 +39,7 @@ class App extends React.Component {
                 {/* <Profile /> */}
               </Route>
               <Route exact path="/Foods">
-                {/* <Foods /> */}
+                <Foods />
               </Route>
               <Route exact path="/Fitness">
                 <Fitness />
@@ -52,7 +52,7 @@ class App extends React.Component {
           </Switch>
           <Footer />
 
-          </IsLoadingAndError>
+          {/* </IsLoadingAndError> */}
         </Router>
       </>
     )
