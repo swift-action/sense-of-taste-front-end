@@ -76,7 +76,17 @@ export class Foods extends Component {
         const favArr = await axios.post(`${this.state.server}/favFoods`,obj)
        
     }
-
+    addToschedual=async (idx)=>{
+        const obj = {
+            email:this.props.auth0.user.email,
+            name: this.state.food[idx].name,
+            image:this.state.food[idx].image,
+            ingredientLines:this.state.food[idx].ingredientLines,
+            calories:this.state.food[idx].calories,
+            totalTime:this.state.food[idx].totalTime
+        }    
+        const favArr = await axios.post(`${this.state.server}/schedual`,obj);
+    }
 
 
 
@@ -113,7 +123,7 @@ export class Foods extends Component {
                                             <p>{item.totalTime}</p>
                                         </Card.Text>
                                         <Button onClick={() => this.addToFav(index)} variant="primary">Add to favourite</Button>
-                                        <Button onClick={() => this.handledeleteShow(index)} variant="primary">Delete </Button>
+                                        <Button onClick={() => this.addToschedual(index)} variant="primary">Add To Schedual </Button>
                                     </Card.Body>
                                 </Card>
                             )
