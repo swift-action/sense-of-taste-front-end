@@ -21,13 +21,13 @@ class Profile extends Component {
             email: this.props.auth0.user.email
         }
         let cheat = await axios.get(`${process.env.REACT_APP_SERVER}/cheatsmeal`, { params: info });
-        // let fav = await axios.get(`${process.env.REACT_APP_SERVER}/favmeals`,{params:info});
+        let fav = await axios.get(`${process.env.REACT_APP_SERVER}/favmeals`,{params:info});
         let schedual = await axios.get(`${process.env.REACT_APP_SERVER}/schedualmeals`, { params: info });
         console.log(schedual);
 
         this.setState({
             cheatArr: cheat.data,
-            //    favArr:fav,
+            favArr:fav.data,
             schedual: schedual.data,
             display: true
         })
@@ -57,6 +57,17 @@ class Profile extends Component {
             schedual: empty.data,
 
         })
+    }
+
+    deleteFav=async(index)=>{
+        let info={
+            email:this.props.auth0.user.email
+        }
+        let empty = await axios.delete(`${process.env.REACT_APP_SERVER}/favdelete/${index}`, { params: info });
+        console.log(empty.data);
+        this.setState({
+            favArr: empty.data
+       })
     }
 
     render() {
@@ -92,7 +103,7 @@ class Profile extends Component {
                             {this.state.schedual.map((item, idx) => {
                                 return (
                                     <Card style={{ width: '18rem' }} key={idx}>
-                                        =     <Card.Img variant="top" src={item.image} alt={item.name} />
+                                      <Card.Img variant="top" src={item.image} alt={item.name} />
                                         <Card.Body>
                                             <Card.Title>{item.name}</Card.Title>
                                             <Card.Text>
@@ -104,6 +115,31 @@ class Profile extends Component {
                                                 <p>{item.totalTime}</p>
                                             </Card.Text>
                                             <Button variant="primary" onClick={() => this.deleteschedual(idx)}>Delete</Button>
+                                        </Card.Body>
+                                    </Card>
+                                )
+                            })}
+                        </CardColumns>
+                    }
+                </div>
+                <div>
+                    {this.state.display &&
+                        <CardColumns>
+                            {this.state.favArr.map((item, idx) => {
+                                return (
+                                    <Card style={{ width: '18rem' }} key={idx}>
+                                      <Card.Img variant="top" src={item.image} alt={item.name} />
+                                        <Card.Body>
+                                            <Card.Title>{item.name}</Card.Title>
+                                            <Card.Text>
+                                                <p>Ingredient</p>
+                                                <p>{item.ingredientLines}</p>
+                                                <p>Calories</p>
+                                                <p>{item.calories}</p>
+                                                <p>Total Time</p>
+                                                <p>{item.totalTime}</p>
+                                            </Card.Text>
+                                            <Button variant="primary" onClick={() => this.deleteFav(idx)}>Delete</Button>
                                         </Card.Body>
                                     </Card>
                                 )
