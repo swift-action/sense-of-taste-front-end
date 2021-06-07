@@ -1,7 +1,74 @@
 
 .heroImage{
-    background-image: url('../IMG/photo-.jpg');
+    position: relative;
+    background-image: url('../IMG/new.jpg');
     width: 100%;
     background-repeat: no-repeat;
-    height: 1100px;
+    background-size: 100%;
+    height: 700px;
+}
+
+.backGrundImage{
+    position: relative;
+    background-image: url('../IMG/photo-1477925518023-22b33cbd802c.png');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    margin: auto;
+    
+}
+
+#botStyle{
+    margin: auto;
+    text-align: center;
+    position:absolute;
+    right: 50%;
+    top: 50%;
+}
+
+.cardStyly{
+    margin: 40px;
+    height: 650px;
+    border-radius: 18px;
+    box-shadow: 5px 5px 15px rgba(226, 143, 143, 0.9);
+    font-family: roboto;
+    text-align: center;
+    background-color: rgba(129, 101, 101, 0.445);
+
+}
+.cardColumeStyly{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.titleStyly{
+    font-size: large;
+    font-weight: bold;
+    color: rgb(195, 35, 56);
+}
+
+
+
+.scrollBar{
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: none;
+} 
+
+.bStyly{
+    margin-top: 10px;
+    margin-left: 10px;
+    
+}
+#one{
+    margin:auto ;
+    text-align: center;
+}
+
+.img-card{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+    height: 35%;
 }
