@@ -6,6 +6,7 @@ import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import { withAuth0 } from '@auth0/auth0-react';
 import { CardColumns } from 'react-bootstrap';
+import './Fitness.css';
 
 
 
@@ -35,17 +36,19 @@ class Fitness extends React.Component {
 
   render() {
     return (
-      <Jumbotron>
+      <div className='fitness'>
+        {/* <Jumbotron> */}
         <h1>Fitness</h1>
-        <CardColumns>
+        
 
+       
+        <CardColumns className='columnsfitness'>
           {this.state.displayCard &&
-
             this.state.fitness.map((item, index) => {
               return (
-                <Card style={{ width: '18rem' }}>
+                <Card className='Cardfitness' style={{ width: '18rem' }}>
 
-                  <Card.Img variant="top" src={item.image} />
+                  <Card.Img variant="top" className='imagefitness' src={item.image} />
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>{item.description}</Card.Text>
@@ -61,7 +64,8 @@ class Fitness extends React.Component {
         </CardColumns>
 
 
-      </Jumbotron>
+        {/* </Jumbotron> */}
+      </div>
     )
   }
 }
