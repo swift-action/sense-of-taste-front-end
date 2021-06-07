@@ -3,6 +3,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import { CardColumns } from 'react-bootstrap';
 
 class Profile extends Component {
     constructor(props) {
@@ -20,29 +21,42 @@ class Profile extends Component {
             email: this.props.auth0.user.email
         }
         let cheat = await axios.get(`${process.env.REACT_APP_SERVER}/cheatsmeal`, { params: info });
-        // let fav = await axios.get(`${this.state.server}/favmeals`,{params:info});
-        // let schedual = await axios.get(`${this.state.server}/schedualmeals`,{params:info});
+        // let fav = await axios.get(`${process.env.REACT_APP_SERVER}/favmeals`,{params:info});
+        let schedual = await axios.get(`${process.env.REACT_APP_SERVER}/schedualmeals`, { params: info });
+        console.log(schedual);
 
         this.setState({
             cheatArr: cheat.data,
             //    favArr:fav,
-            //    schedual:schedual,
+            schedual: schedual.data,
             display: true
         })
 
     }
-    
-    deleteCheat = async()=>{
+
+    deleteCheat = async () => {
         let info = {
-            email:this.props.auth0.user.email
+            email: this.props.auth0.user.email
         }
         let index = 0;
-        let empty = await axios.delete(`${process.env.REACT_APP_SERVER}/cheatsmeal/${index}`,{params:info});
+        let empty = await axios.delete(`${process.env.REACT_APP_SERVER}/cheatsmeal/${index}`, { params: info });
         console.log(empty.data);
-       this.setState({
-           cheatArr:[empty.data],
-           display:true
-       })
+        this.setState({
+            cheatArr: [empty.data],
+            display: true
+        })
+    }
+
+    deleteschedual = async (index) => {
+        let info = {
+            email: this.props.auth0.user.email
+        }
+        let empty = await axios.delete(`${process.env.REACT_APP_SERVER}/schedualdelete/${index}`, { params: info });
+        console.log(empty.data);
+        this.setState({
+            schedual: empty.data,
+
+        })
     }
 
     render() {
@@ -70,6 +84,32 @@ class Profile extends Component {
                             <Button variant="primary" onClick={this.deleteCheat}>Delete</Button>
                         </Card.Body>
                     </Card>}
+                </div>
+
+                <div>
+                    {this.state.display &&
+                        <CardColumns>
+                            {this.state.schedual.map((item, idx) => {
+                                return (
+                                    <Card style={{ width: '18rem' }} key={idx}>
+                                        =     <Card.Img variant="top" src={item.image} alt={item.name} />
+                                        <Card.Body>
+                                            <Card.Title>{item.name}</Card.Title>
+                                            <Card.Text>
+                                                <p>Ingredient</p>
+                                                <p>{item.ingredientLines}</p>
+                                                <p>Calories</p>
+                                                <p>{item.calories}</p>
+                                                <p>Total Time</p>
+                                                <p>{item.totalTime}</p>
+                                            </Card.Text>
+                                            <Button variant="primary" onClick={() => this.deleteschedual(idx)}>Delete</Button>
+                                        </Card.Body>
+                                    </Card>
+                                )
+                            })}
+                        </CardColumns>
+                    }
                 </div>
             </>
         );
