@@ -4,7 +4,9 @@
 
 
 
+
 .cardlogin{
+
   margin: auto;
   text-align: center;
  color: whitesmoke;
@@ -12,7 +14,7 @@
   height: 250px;
   border-radius: 30px;
   background-color: rgba(245, 245, 245, 0.096);
-}
+} */
 
 
 .login-page{
@@ -29,7 +31,9 @@
   object-fit:contain;
   z-index: 1;
 }
+
 .cardlogin:hover{
+
   margin: auto;
   text-align: center;
  
@@ -38,4 +42,4 @@
   border-radius: 30px;
   border :rgb(180, 81, 81) solid 3px;
   
-} */
+} 
