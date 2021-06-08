@@ -51,7 +51,7 @@ class App extends React.Component {
         </>}
 
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
 
           {/* </IsLoadingAndError> */}
         </Router>
