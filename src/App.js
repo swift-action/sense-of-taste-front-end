@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
+// import Header from './Header';
 import IsLoadingAndError from './IsLoadingAndError';
-import Footer from './Footer';
+// import Footer from './Footer';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,6 +15,8 @@ import Profile from './components/Profile';
 import Foods from './components/Foods';
 import Fitness from './components/Fitness';
 import AboutUs from './components/AboutUs';
+import FooterNew from './components/FooterNew';
+
 
 
 
@@ -28,10 +30,10 @@ class App extends React.Component {
       <>
         <Router>
           {/* <IsLoadingAndError> */}
-          <Header />
+          {/* <Header /> */}
           <Switch>
             <Route exact path="/">
-              {this.props.auth0.isAuthenticated ? < HomePage /> : <Login />}
+              {this.props.auth0.isAuthenticated ? <>< HomePage /> <FooterNew/></>: <Login />}
        
 
             </Route>
@@ -51,7 +53,6 @@ class App extends React.Component {
         </>}
 
           </Switch>
-          {/* <Footer /> */}
 
           {/* </IsLoadingAndError> */}
         </Router>

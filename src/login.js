@@ -8,7 +8,7 @@ class Login extends React.Component {
   render() {
     return(
       <div className='login-page'>
-      <Card border="danger"  style={{ width: '18rem' }}>
+      <Card className='cardlogin' border="danger"  style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>Log In</Card.Title>
           <Card.Text>

@@ -1,10 +1,12 @@
+/* 
 
 
 
 
 
 
-/* .card{
+.cardlogin{
+
   margin: auto;
   text-align: center;
  color: whitesmoke;
@@ -29,7 +31,9 @@
   object-fit:contain;
   z-index: 1;
 }
-/* .card:hover{
+
+.cardlogin:hover{
+
   margin: auto;
   text-align: center;
  
@@ -38,4 +42,4 @@
   border-radius: 30px;
   border :rgb(180, 81, 81) solid 3px;
   
-} */
+} 

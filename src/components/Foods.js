@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import './food.css';
 import { CardColumns } from 'react-bootstrap';
 import FoodModal from '../components/FoodModal';
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
 export class Foods extends Component {
     constructor(props) {
@@ -104,8 +105,8 @@ export class Foods extends Component {
 
     render() {
         return (
-            <>
-                <div className='heroImage'><Button variant="outline-danger" onClick={this.handleShow}>SEARCH</Button></div>
+            <div className='backGrundImage'  >
+                <div className='heroImage'><Button id='botStyle' className="button type1" onClick={this.handleShow}>SEARCH</Button></div>
                 <FoodModal 
                 showModal={this.state.displayModal}
                 hideModal={this.handleClose}
@@ -115,17 +116,17 @@ export class Foods extends Component {
 
                 
                 />
-                <CardColumns>
+                <CardColumns className='cardColumeStyly' >
                     {this.state.displayFoodsCard &&
 
                         this.state.food.map((item, index) => {
                             return (
 
-                                <Card style={{ width: '18rem' }}>
-                                    <Card.Img variant="top" src={item.image} />
+                                <Card className='cardStyly' style={{ width: '20rem' }}>
+                                    <Card.Img className='img-card'  variant="top" src={item.image} />
                                     <Card.Body>
-                                        <Card.Title>{item.name}</Card.Title>
-                                        <Card.Text>
+                                        <Card.Title className='titleStyly' >{item.name}</Card.Title>
+                                        <Card.Text className='scrollBar' >
                                             <p>Ingredient</p>
                                             <p>{item.ingredientLines}</p>
                                             <p>Calories</p>
@@ -133,16 +134,18 @@ export class Foods extends Component {
                                             <p>Total Time</p>
                                             <p>{item.totalTime}</p>
                                         </Card.Text>
-                                        <Button onClick={() => this.addToFav(index)} variant="primary">Add to favourite</Button>
-                                        <Button onClick={() => this.addToschedual(index)} variant="primary">Add To Schedual </Button>
-                                        <Button onClick={() => this.cheatMeal(index)} variant="primary">Cheat Meal </Button>
+                                        <ButtonGroup id='positionB' aria-label="Basic example">
+                                        <Button id='leftBotton' style={{width:'100%'}} variant="outline-danger" size="sm" onClick={() => this.addToFav(index)} >  Add to favourite</Button><br></br>
+                                        <Button id='middleBotton' style={{width:'100%'}} variant="outline-danger" size="sm" onClick={() => this.addToschedual(index)} > Add To Schedual </Button>
+                                        <Button id='rightBotton' style={{width:'100%'}} variant="outline-danger" size="sm" onClick={() => this.cheatMeal(index)} >  Cheat Meal </Button>
+                                        </ButtonGroup>
                                     </Card.Body>
                                 </Card>
                             )
                         })
                     }
                 </CardColumns>
-            </>
+            </div >
         )
     }
 }
