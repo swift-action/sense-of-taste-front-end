@@ -1,7 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 .jumbotron{
   margin-bottom: 0;
 }
-body{
-  background-image:url(https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1568&q=80) ;
+*{box-sizing: border-box;}
+
+
+
+.hero{
+  /* background: url(https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1568&q=80)center center/cover no-repeat; */
+  z-index: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-top: 0px;
+  padding-top: 0px;
+  height: 100vh; 
+  width: 100%;
+  background-position: center;  
+  flex: 1;
+  /* width: 100%;  */
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+/* align-items: center; */
+box-shadow:inset 0 0 0 1000px rgba(0,0,0,0.2);
+object-fit:contain;
+} 
+
+.pic{
+  width: 100%;
+  height: 600px;
+}
+.d-block-w-100{
+  width: 100%;
+ /* height: 0%;  */
+  display: auto; 
+}
+
+/* .caption{
+  height: 500px;
+} */
+.button{
+  opacity: .5;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.button:hover{
+  background-color: red;
+}
+.paragraph{
+  float: left;
+  width: 40%;
+  text-align: justify;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bolder;
+  line-height: 1.7rem;
+  margin: 50px;
+}
+.image-button{
+  float: right;
+  height: 340px;
+  width: 40%;
+    border:2px solid #fff;
+    box-shadow: 10px 10px 5px #ccc;
+    -moz-box-shadow: 10px 10px 5px #ccc;
+    -webkit-box-shadow: 10px 10px 5px #ccc;
+    -khtml-box-shadow: 10px 10px 5px #ccc;
+    margin: 60px;
+    
+}
+.div-button{
+  height:100vh;
+  margin: 70px ;
+  background-color: white;
+  
+
+}
+.logingin{
+  height: 60px;
+  position: absolute;
+  right:25%;
+  top: 30px;
+}
+.writings{
+  width: 50%;
+   position: absolute;
+   top:38%;
+   right:30%; 
+}
+.writings h1{
+  font-size: 60px;
+  font-family: 'Dancing Script', cursive; 
+}
+.caption{
+   position: absolute; 
+  right: 75px;
+  margin-top: 0;
+  display: flex;
+  height: 780px;
+  width:80%;
   
 }
+.footerHome{
+  width: 100%;
+  position: absolute;
+       top:2390px;
+}
+.containerBig {
+  width: 100%;
+  height: 90vh;
+  background-color:rgb(10, 10, 10);
+  
+  display:grid;
+  place-items:center;
+}
+.containerBig img {
+  width: 30%;
+  height: 100%;
+  object-fit:cover;
+  
+  -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
+  
+  transform-origin:center;
+  transform:perspective(800px) rotateY(25deg);
+  transition:0.5s;
+}
+.containerImg {
+  max-width:700px;
+  max-height:400px;
+  
+  
+  
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  
+}
+.containerImg:hover img {
+  opacity:0.3;
+}
+.containerImg img:hover {
+  transform:perspective(800px)       rotateY(0deg);
+  opacity:1;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800');
+
+
+
+
+.movie_card{
+  position: relative;
+  display: block;
+  width: 1200px;
+  height: 550px;
+  margin:  auto; 
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.4s;
+  box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
+}
+  .movie_card:hover{
+    transform: scale(1.02);
+    box-shadow: 0px 0px 80px -25px rgba(0,0,0, 0.5);
+    transition: all 0.4s;
+  }
+  .info_section{
+    position: relative;
+    width: 100%;
+    height: 100%;
+	  background-blend-mode: multiply;
+    z-index: 2;
+    border-radius: 10px;}
+    .movie_header{
+      position: relative;
+      padding: 30px;
+      height: 40%;
+    }
+      h1{
+       
+        font-weight: 400;
+      }
+      h4{
+        color: #555;
+        font-weight: 400;
+      }
+      .minutes{
+        display: inline-block;
+        margin-top: 15px;
+        color: #555;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid rgba(0,0,0,0.05);
+      }
+      .type{
+        display: inline-block;
+        color: #959595;
+        margin-left: 10px;
+      }
+      .locandina{
+        position: relative;
+        float: left;
+        margin-right: 20px;
+        height: 170px;
+        box-shadow: 0 0 20px -10px rgba(0,0,0,0.5);
+      }
+    
+    .movie_desc{
+      padding: 25px;
+      height: 50%;
+    }
+    .movie_header h1{
+      color:rgb(139, 21, 6) ;
+      margin-bottom: 30px;
+    }
+    .text{
+      color: #414040;
+      font-size: 20px;
+    }
+   
+      
+  
+  .blur_back{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 100%; right: 0;
+    background-size: cover;
+    border-radius: 11px;
+  }
+
+
+@media screen and (min-width: 768px) {
+  .movie_header{
+    width: 65%;
+  }
+  
+  .movie_desc{
+    width: 50%;
+  }
+  
+  .info_section{
+    background: linear-gradient(to right, #e5e6e6 50%, transparent 100%);
+  }
+  
+  .blur_back{
+    width: 80%;
+    background-position: -100% 10% !important;  
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movie_card{
+    width: 95%;
+    margin: 70px auto; 
+    min-height: 350px;
+    height: auto;
+  }
+  
+  .blur_back{
+    width: 100%;
+    background-position: 50% 50% !important;  
+  }
+  
+  .movie_header{
+    width: 100%;
+    margin-top: 85px;
+  }
+ 
+  .movie_desc{
+    width: 100%;
+  }
+  
+  .info_section{
+    background: linear-gradient(to top, #e5e6e6 50%, transparent 100%);
+    display: inline-grid;
+  }
+}
+
+
+.bright_back{
+  background: url("https://images.unsplash.com/photo-1514516702655-8d42ae4e8f89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
+}
+
+

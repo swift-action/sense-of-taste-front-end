@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+#profileHeader{
+position: absolute;
+top: 30px;
+width: 100%;
+}
+.cheatFoodImage {
+  width: 90%;
+  height: 16rem;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+p,h2,legend{
+    color: rgba(224, 224, 224, 0.8);
+    
+}
+legend{
+    font-size: 32px;
+}
+#cheatHeader{
+    font-size: 40px;
+}
+#cheatMeal {
+  position: absolute;
+  /* top: 50px; */
+  right: 5%;
+  border-style: solid;
+  border-width: 1px 1px; /* 5px top and bottom, 20px on the sides */
+  border-color: rgba(219, 219, 219, 0.8);
+  border-radius: 5px;
+  padding: 0%;
+  margin-top: 100px;
+  /* margin-right: 5%; */
+  float: right;
+  width: 60%;
+  height: 380px;
+  margin-bottom: 50px;
+  box-shadow: 0 0 5px rgb(255, 255, 255);
+  transition-duration: 0.3s;
+}
+#cheatMeal:hover {
+  box-shadow: 0px 0px 25px rgb(255, 255, 255);
+}
+#cheatMeal div{
+    display: inline-block;
+    margin-right: 20%;
+}
+#cheatMeal img {
+  width: 30%;
+  float: left;
+  margin-left: 0%;
+  margin-bottom: 0;
+  height: 100%;
+  border-radius: 5px;
+}
+#cheatMeal h2 {
+  margin-top: 2%;
+}
+#cheatMeal Button {
+  margin-bottom: 2%;
+}
+#profileInfo {
+  /* border-style: solid;
+  border-width: 1px 1px; */
+  /* border-color: rgba(219, 219, 219, 0.8);
+  border-radius: 5px; */
+  float: left;
+  height: 300px;
+  width: 21%;
+  margin-top: 120px;
+  margin-left: 1%;
+}
+#profileInfo img {
+  width: 70%;
+  height: 70%;
+  border-radius: 125px;
+  margin-left: 15%;
+  box-shadow: 0px 0px 20px rgb(255, 255, 255);
+  transition-duration: 0.3s;
+}
+#profileInfo img:hover{
+    box-shadow: 0px 0px 30px rgb(216, 13, 13);
+}
+#profileInfo div{
+    margin-left:20% ;
+    color: rgba(224, 224, 224, 0.8);
+    text-shadow:
+    0 0 4px #fff,
+    0 0 2px #fff,
+    0 0 2px #fff,
+    0 0 6px rgb(255, 255, 255),
+    /* 0 0 82px rgb(255, 255, 255); */
+}
+#profileInfo #userName{
+   font-size: 28px;
+   color: #fff;
+   text-shadow:
+       0 0 1px #fff,
+       0 0 1px #fff,
+       0 0 1px #fff,
+       0 0 1px rgb(255, 255, 255);
+       /* 0 0 82px rgb(255, 255, 255); */
+       /* 0 0 92px rgb(255, 94, 0),
+       0 0 102px rgb(255, 94, 0),
+       0 0 151px rgb(255, 94, 0); */
+    margin-top: 6%;
+    margin-left:25%;
+    color: rgba(224, 224, 224, 0.8);
+}
+#profileContainer {
+  clear: both;
+}
+.profileColumns {
+  height: 36.3rem;
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  border-style: solid;
+  border-width: 1px 1px; /* 5px top and bottom, 20px on the sides */
+  border-color: rgba(219, 219, 219, 0.8);
+}
+.CardDescription {
+  overflow: auto;
+  height: 11rem;
+  scrollbar-width: none;
+}
+.foodCard {
+  width: 18rem;
+}
+#schedule {
+  position: absolute;
+  top: 500px;
+  right: 5%;
+  width: 60%;
+}
+.profileColumns2 {
+  height: 36.3rem;
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  border-style: solid;
+  border-width: 1px 1px; /* 5px top and bottom, 20px on the sides */
+  border-color: rgba(219, 219, 219, 0.8);
+  margin-top: 20px;
+}
+
+.foodImage {
+  width: 100%;
+  height: 14rem;
+}
+.profileFoodTitle {
+  height: 3rem;
+  color: rgba(224, 224, 224, 0.8);
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+.allProfile {
+  position: relative;
+  background-image: url(https://wallpaperaccess.com/full/3276549.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 2000px;
+  width: 100%;
+  margin: auto;
+}
+.shafaff {
+  background-color: rgba(165, 97, 97, 0);
+  box-shadow: 0 15px 20px rgba(255, 255, 255, 0.356);
+  transition-duration: 0.3s;
+}
+.shafaff:hover {
+  box-shadow: 0px 0px 13px rgb(255, 255, 255);
+}
+#fav {
+    position: absolute;
+    top: 1150px;
+    right: 5%;
+    width: 60%;
+}

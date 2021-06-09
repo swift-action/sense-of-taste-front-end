@@ -1,20 +1,23 @@
 import React from 'react';
-import Header from './Header';
+// import Header from './Header';
 import IsLoadingAndError from './IsLoadingAndError';
-import Footer from './Footer';
+// import Footer from './Footer';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-
+import LoginButton from './components/LoginButton';
 import { withAuth0 } from '@auth0/auth0-react';
 import HomePage from './HomePage';
 import Login from './login';
-// import Profile from './components/Profile';
-// import Foods from './components/Foods';
+import Profile from './components/Profile';
+import Foods from './components/Foods';
 import Fitness from './components/Fitness';
 import AboutUs from './components/AboutUs';
+
+
+
 
 
 
@@ -26,20 +29,20 @@ class App extends React.Component {
     return (
       <>
         <Router>
-          <IsLoadingAndError>
-          <Header />
+          {/* <IsLoadingAndError> */}
+          {/* <Header /> */}
           <Switch>
             <Route exact path="/">
-              {this.props.auth0.isAuthenticated ? < HomePage /> : <Login />}
-       
+              {/* {this.props.auth0.isAuthenticated ? <>< HomePage /> </>: <LoginButton />} */}
+              < HomePage />
 
             </Route>
             {this.props.auth0.isAuthenticated && <>
               <Route exact path="/Profile">
-                {/* <Profile /> */}
+                <Profile />
               </Route>
               <Route exact path="/Foods">
-                {/* <Foods /> */}
+                <Foods />
               </Route>
               <Route exact path="/Fitness">
                 <Fitness />
@@ -47,13 +50,15 @@ class App extends React.Component {
               <Route exact path="/AboutUs">
                 <AboutUs />
               </Route>
+       
         </>}
 
           </Switch>
-          <Footer />
-
-          </IsLoadingAndError>
+         
+          {/* </IsLoadingAndError> */}
         </Router>
+    
+
       </>
     )
   }
