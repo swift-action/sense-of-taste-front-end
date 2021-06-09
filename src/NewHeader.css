@@ -1,25 +1,36 @@
 .nav-area{
-    float: right;
     list-style: none;
     margin-top: 10px;
+    width: 91%; 
 }
 .header-contaner{
     display: inline-block;
 }
 .nav-area .navBar {
-color: #fff;
+    /* margin-right: 20px; */
+position: relative;
+color: rgb(189, 189, 189);
 text-decoration: none;
 padding: 5px 20px;
 font-family: poppins;
 font-size: 16px;
 text-transform: uppercase;
 display: inline-block;
+
 }
+
 .nav-area .navBar:hover{
-    background: rgba(255, 255, 255, 0.952);
-    color: #333;
+    color: #fff;
+    text-shadow:
+      0 0 10px rgb(192, 192, 192),
+      0 0 10px rgb(197, 197, 197),
+      0 0 10px rgb(184, 184, 184),
+      0 0 10px rgb(206, 206, 206);
 }
-.logout-button{
-    
-    padding-left: 20px;  
+#logout-button{
+display: inline-block;
+position: absolute;
+right: 40px;
+height: 40px; 
+width: 100px;
 }

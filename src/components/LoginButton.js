@@ -10,7 +10,7 @@ function LoginButton() {
   } = useAuth0();
 
   return !isAuthenticated && (
-    <Button style={{padding:'15px',marginTop:'20px'}} variant="danger" onClick={loginWithRedirect}>Log in</Button> 
+    <Button  variant="danger" onClick={loginWithRedirect}>Log in</Button> 
   );
 } 
 

@@ -4,6 +4,9 @@ import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import { CardColumns } from 'react-bootstrap';
+import FoodHeader from './foodHeader';
+import FooterNew from './FooterNew';
+
 import './Profile.css'
 
 class Profile extends Component {
@@ -86,6 +89,9 @@ class Profile extends Component {
         return (
             <>
                 <div className="allProfile">
+                    <div id="profileHeader">
+                <FoodHeader />
+                     </div>
                     <div id="profileInfo">
                         <img src={user.picture} alt={user.name} />
                         <div id="userName">{user.name}</div>
@@ -145,7 +151,7 @@ class Profile extends Component {
                     </fieldset>
                     <fieldset id='fav'>
                         <legend>My Favorites:</legend>
-                        {this.state.favArr.length != 0 && <div className="profileColumns2">
+                        {<div className="profileColumns2">
                             {this.state.display &&
                                 <CardColumns>
                                     {this.state.favArr.map((item, idx) => {
@@ -171,7 +177,9 @@ class Profile extends Component {
                             }
                         </div>}
                     </fieldset>
+                    <FooterNew/>
                 </div>
+                
             </>
         );
     }
