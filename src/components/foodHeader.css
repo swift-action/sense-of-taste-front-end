@@ -1,0 +1,40 @@
+.navig-area{
+    /* float: right; */
+    list-style: none;
+    margin-top: 0px;
+    width: 70%;
+    margin-left: 12px;
+
+}
+#home{
+    margin-left: 45%;
+}
+.header-contaner{
+    display: inline-block;
+}
+.navig-area .navigBar {
+position: relative;
+color: rgb(189, 189, 189);
+text-decoration: none;
+padding: 5px 20px;
+font-family: poppins;
+font-size: 16px;
+text-transform: uppercase;
+display: inline-block;
+transition: 0.1s;
+}
+.navig-area .navigBar:hover{
+    /* background: rgba(255, 255, 255, 0.952); */
+    color: white;
+  text-shadow:
+    0 0 10px rgb(192, 192, 192),
+    0 0 10px rgb(197, 197, 197),
+    0 0 10px rgb(184, 184, 184),
+    0 0 10px rgb(206, 206, 206);
+}
+
+.logingOut{
+  
+    position: absolute;
+    right: 180px
+}

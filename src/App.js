@@ -7,7 +7,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-
+import LoginButton from './components/LoginButton';
 import { withAuth0 } from '@auth0/auth0-react';
 import HomePage from './HomePage';
 import Login from './login';
@@ -15,7 +15,7 @@ import Profile from './components/Profile';
 import Foods from './components/Foods';
 import Fitness from './components/Fitness';
 import AboutUs from './components/AboutUs';
-import FooterNew from './components/FooterNew';
+
 
 
 
@@ -33,8 +33,8 @@ class App extends React.Component {
           {/* <Header /> */}
           <Switch>
             <Route exact path="/">
-              {this.props.auth0.isAuthenticated ? <>< HomePage /> <FooterNew/></>: <Login />}
-       
+              {/* {this.props.auth0.isAuthenticated ? <>< HomePage /> </>: <LoginButton />} */}
+              < HomePage />
 
             </Route>
             {this.props.auth0.isAuthenticated && <>
@@ -50,12 +50,15 @@ class App extends React.Component {
               <Route exact path="/AboutUs">
                 <AboutUs />
               </Route>
+       
         </>}
 
           </Switch>
-
+         
           {/* </IsLoadingAndError> */}
         </Router>
+    
+
       </>
     )
   }
