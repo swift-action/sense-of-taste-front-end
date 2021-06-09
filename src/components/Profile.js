@@ -62,8 +62,10 @@ class Profile extends Component {
     }
 
     deleteschedual = async (index) => {
+        console.log(index);
         let info = {
-            email: this.props.auth0.user.email
+            email: this.props.auth0.user.email,
+            idex:index,
         }
         let empty = await axios.delete(`${process.env.REACT_APP_SERVER}/schedualdelete/${index}`, { params: info });
         console.log(empty.data);
@@ -75,7 +77,8 @@ class Profile extends Component {
 
     deleteFav = async (index) => {
         let info = {
-            email: this.props.auth0.user.email
+            email: this.props.auth0.user.email,
+            idex:index
         }
         let empty = await axios.delete(`${process.env.REACT_APP_SERVER}/favdelete/${index}`, { params: info });
         console.log(empty.data);
